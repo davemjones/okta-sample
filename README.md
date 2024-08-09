@@ -1,3 +1,11 @@
+# OKTA Sample App
+This app is a developer learning tool to discover the basics of implementing OKTA sign-in with a React application.
+
+To get the application working, the following tasks need to be completed:
+1. Register for an OKTA Developer account
+1. On the OKTA Admin Console, create an app.  The issuer and clientId keys will be needed for the next step.
+1. Create a `.env` file in the /app folder.  Refer to `sample.env.local` as a template for your new `.env` file.  Replace the clientId and issuer values with the values provided from the OKTA Admin Console.
+
 ## OKTA React Sample
 https://github.com/okta-samples/okta-react-sample
 
