@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+## OKTA React Sample
+https://github.com/okta-samples/okta-react-sample
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Simple.css
+https://simplecss.org/
 
-## Available Scripts
+## Custom Field Attribute
+To add a custom field to user profile settings in Okta, you need to follow these steps:
 
-In the project directory, you can run:
+1. **Log in to Okta Admin Console:**
+   - Go to your Okta organization's URL (e.g., `https://yourcompany.okta.com`).
+   - Log in with your administrator credentials.
 
-### `npm start`
+2. **Navigate to Directory:**
+   - From the Admin Console, go to the left-hand menu and select `Directory`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Profile Editor:**
+   - Under `Directory`, select `Profile Editor`.
+   - You'll see a list of all the applications and directories integrated with Okta. Find and select `Okta`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. **Edit User Profile:**
+   - Click on the `Profile` button next to `Okta` in the Profile Editor.
+   - You will be directed to the `Profile Editor` for Okta.
 
-### `npm test`
+5. **Add Attribute:**
+   - On the `Profile Editor` page, you’ll see the `Attributes` tab.
+   - Click on `Add Attribute`.
+   - In the `Add Attribute` form, fill in the required fields:
+     - **Display Name**: The name of the custom field as it will appear in the user profile.
+     - **Variable Name**: The name used in API requests.
+     - **Description**: A brief description of the custom field.
+     - **Type**: Select the appropriate type for the field (e.g., string, integer, boolean).
+     - **Attribute Required**: Check this box if the field is required.
+   - Click `Save` to add the custom attribute.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. **Mapping Attributes:**
+   - If you need to map this custom attribute to attributes in other applications, click on the `Mappings` tab.
+   - Select `Okta User to App User` or `App User to Okta User` depending on your requirements.
+   - Set the mappings accordingly and click `Save Mappings`.
 
-### `npm run build`
+7. **Testing:**
+   - Navigate to `Directory` > `People` and select a user.
+   - Click on the `Profile` tab and check if the custom field appears and can be edited.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+By following these steps, you can successfully add a custom field to the user profile settings in Okta. If you have any specific needs or run into issues, feel free to ask!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
