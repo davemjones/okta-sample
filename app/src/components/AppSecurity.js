@@ -1,18 +1,17 @@
 import React from "react";
-import { Route, useHistory, withRouter } from "react-router-dom";
+import {  useHistory, withRouter } from "react-router-dom";
 import { OktaAuth, toRelativeUrl } from "@okta/okta-auth-js";
-import { LoginCallback, Security } from "@okta/okta-react";
+import {  Security } from "@okta/okta-react";
 import App from "../App";
-import Public from "../routes/Public";
-import Home from "../routes/Home";
-import Login from "../routes/Login";
+import AppRouter from "../routes/AppRouter";
+
 
 const oktaAuth = new OktaAuth({
   issuer: process.env.REACT_APP_ISSUER,
   clientId: process.env.REACT_APP_CLIENT_ID,
   redirectUri: window.location.origin + "/okta/redirect",
-  scopes: ['openid'],
-  pkce: true
+  scopes: ["openid", "profile", "email"],
+  pkce: true,
 });
 
 const AppSecurity = () => {
@@ -25,10 +24,7 @@ const AppSecurity = () => {
   return (
     <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}>
       <App>
-        <Route path="/public" exact component={Public} />
-        <Route path="/okta/redirect" component={LoginCallback} />
-        <Route path="/okta/login" component={Login} />
-        <Route path="/" exact component={Home} />
+        <AppRouter />
       </App>
     </Security>
   );
@@ -36,6 +32,4 @@ const AppSecurity = () => {
 
 const AppSecurityWithRouter = withRouter(AppSecurity);
 
-const AppRouter = () => <AppSecurityWithRouter />;
-
-export default AppRouter;
+export default AppSecurityWithRouter;

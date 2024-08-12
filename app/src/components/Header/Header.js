@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { withOktaAuth } from "@okta/okta-react";
 import "./header.css";
 
 const Header = ({ oktaAuth, authState }) => {
+  const [userInfo, setUserInfo] = useState(null);
+  // const [claims, setClaims] = useState(null);
+
   const login = async () => {
     await oktaAuth.signInWithRedirect();
   };
@@ -10,10 +13,25 @@ const Header = ({ oktaAuth, authState }) => {
     await oktaAuth.signOut();
   };
 
+  useEffect(() => {
+    if (!authState || !authState.isAuthenticated) {
+      // When user isn't authenticated, forget any user info
+      setUserInfo(null);
+    } else {
+      // setClaims(authState.idToken.claims);
+
+      // get user information from `/userinfo` endpoint
+      oktaAuth.getUser().then((info) => setUserInfo(info));
+    }
+  }, [authState, oktaAuth]); // Update if authState changes
+
+
   return (
     <header className="app-header">
       <div className="header--welcome">
-        {authState?.isAuthenticated && "Welcome!"}
+        {authState?.isAuthenticated &&
+          userInfo?.name &&
+          `Welcome, ${userInfo.name}!`}
       </div>
       {authState?.isAuthenticated ? (
         <button onClick={logout}>Logout</button>
