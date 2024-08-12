@@ -14,20 +14,13 @@ const AppRouter = () => {
       <Route path="/public" exact component={Public} />
       <Route path="/okta/redirect" component={LoginCallback} />
       <Route path="/okta/login" component={Login} />
-
-      {authState?.isAuthenticated ? (
+      <Route path="/" exact>
+        <Home isAuthenticated={authState} />
+      </Route>
+      {authState?.isAuthenticated && (
         <>
-          <Route path="/okta-browser" component={OKTABrowser} />
-          <Route
-            path="/"
-            exact
-            render={() => <Home isAuthenticated={authState} />}
-          />
+          <Route path="/api-browser" component={OKTABrowser} />
         </>
-      ) : (
-        <Route path="/" exact>
-          <Home isAuthenticated={authState} />
-        </Route>
       )}
     </>
   );
