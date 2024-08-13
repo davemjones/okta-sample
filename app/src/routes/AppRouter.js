@@ -15,7 +15,7 @@ const AppRouter = () => {
       <Route path="/okta/redirect" component={LoginCallback} />
       <Route path="/okta/login" component={Login} />
       <Route path="/" exact>
-        <Home isAuthenticated={authState} />
+        <Home isAuthenticated={authState?.isAuthenticated} />
       </Route>
       {authState?.isAuthenticated && (
         <>
