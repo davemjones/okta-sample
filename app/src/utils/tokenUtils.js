@@ -3,7 +3,7 @@ import oktaAuth from "../components/oktaAuth";
 export const checkAndRefreshToken = async (refresh = false) => {
   try {
     // Get the current access token from the token manager
-    const tokenManager = oktaAuth.tokenManager;
+    const tokenManager = oktaAuth().tokenManager;
     const token = await tokenManager.get("accessToken");
 
     // Check if the token is about to expire (within 5 minutes)
@@ -17,7 +17,7 @@ export const checkAndRefreshToken = async (refresh = false) => {
 
         // Refresh the token
         if (refresh) {
-          const refreshedTokens = await oktaAuth.tokenManager.renew(
+          const refreshedTokens = await oktaAuth().tokenManager.renew(
             "accessToken"
           );
           console.log("Token refreshed:", refreshedTokens.accessToken);
