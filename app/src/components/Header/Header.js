@@ -4,7 +4,6 @@ import "./header.css";
 
 const Header = ({ oktaAuth, authState }) => {
   const [userInfo, setUserInfo] = useState(null);
-  // const [claims, setClaims] = useState(null);
 
   const login = async () => {
     await oktaAuth.signInWithRedirect();
@@ -18,15 +17,13 @@ const Header = ({ oktaAuth, authState }) => {
       // When user isn't authenticated, forget any user info
       setUserInfo(null);
     } else {
-      // setClaims(authState.idToken.claims);
-
       // get user information from `/userinfo` endpoint
       oktaAuth.getUser().then((info) => setUserInfo(info));
     }
   }, [authState, oktaAuth]); // Update if authState changes
 
-
   return (
+    
     <header className="app-header">
       <div className="header__welcome">
         {authState?.isAuthenticated &&
