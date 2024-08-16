@@ -3,7 +3,6 @@ import { withOktaAuth } from "@okta/okta-react";
 
 const AuthDetails = ({ oktaAuth, authState }) => {
   const [userInfo, setUserInfo] = useState(null);
-  // const [claims, setClaims] = useState(null);
 
   useEffect(() => {
     if (!authState || !authState.isAuthenticated) {

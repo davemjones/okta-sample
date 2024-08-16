@@ -15,10 +15,7 @@ const Token = () => {
       if (!currentToken) {
         console.log("User is not authenticated. Redirecting to login...");
         oktaAuth.signInWithRedirect();
-      } else {
-        console.log("current token:");
-        console.table(currentToken);
-      }
+      } 
     });
   };
 
@@ -30,10 +27,7 @@ const Token = () => {
       if (!newToken) {
         console.log("User is not authenticated. Redirecting to login...");
         oktaAuth.signInWithRedirect();
-      } else {
-        console.log("refreshed token:");
-        console.table(newToken);
-      }
+      } 
     });
   };
 

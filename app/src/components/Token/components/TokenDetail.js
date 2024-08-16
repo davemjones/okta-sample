@@ -11,7 +11,6 @@ const Item = ({ name, value, tip }) => {
     <>
       <div className="token-detail__name">{name}</div>
       <div className="token-detail__value">{value}</div>
-      {/* <div role="tooltip" id={name}>{tip}</div> */}
     </>
   );
 };
