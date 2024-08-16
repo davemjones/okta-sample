@@ -1,0 +1,10 @@
+.token-detail__container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: .5em;
+}
+
+.token-detail__value {
+    overflow: auto;
+    text-wrap: nowrap;
+}

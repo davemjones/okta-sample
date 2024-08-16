@@ -10,8 +10,7 @@ const AuthDetails = ({ oktaAuth, authState }) => {
       // When user isn't authenticated, forget any user info
       setUserInfo(null);
     } else {
-      // setClaims(authState.idToken.claims);
-
+      
       // get user information from `/userinfo` endpoint
       oktaAuth.getUser().then((info) => {
         setUserInfo(info);

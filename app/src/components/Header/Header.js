@@ -28,7 +28,7 @@ const Header = ({ oktaAuth, authState }) => {
 
   return (
     <header className="app-header">
-      <div className="header--welcome">
+      <div className="header__welcome">
         {authState?.isAuthenticated &&
           userInfo?.name &&
           `Welcome, ${userInfo.name}!`}
