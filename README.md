@@ -11,6 +11,7 @@ When setting up your OKTA dev account, ensure there is the appropriate URL param
 
 ### For example (main app)
 Sign-in redirect URI: http://localhost:3000/okta/redirect?app=main
+
 Initiate login URI: http://localhost:3000/okta/login?app=main
 
 ## OKTA React Sample
