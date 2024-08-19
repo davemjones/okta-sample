@@ -10,9 +10,8 @@ To get the application working, the following tasks need to be completed:
 When setting up your OKTA dev account, ensure there is the appropriate URL parameter on both the "Sign-in redirect URI" and the "Initiate login URI".  Refer to `oktaConfig.js` for valid parameters.
 
 ### For example (main app)
-Sign-in redirect URI: http://localhost:3000/okta/redirect?app=main
-
-Initiate login URI: http://localhost:3000/okta/login?app=main
+- Sign-in redirect URI: http://localhost:3000/okta/redirect?app=main
+- Initiate login URI: http://localhost:3000/okta/login?app=main
 
 ## OKTA React Sample
 https://github.com/okta-samples/okta-react-sample
