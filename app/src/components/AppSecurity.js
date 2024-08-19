@@ -15,15 +15,14 @@ const AppSecurity = () => {
     // extract app from the URL
     const params = new URLSearchParams(location.search);
     const appId = params.get("app");
-    console.log(`appId: ${appId}`);
-    
+
     if (appId && !app) {
       //set the session storage
-      sessionStorage.setItem("eboss_app", appId);
+      sessionStorage.setItem("app", appId);
     }
 
     if (!appId) {
-      setApp(sessionStorage.getItem("eboss_app"));
+      setApp(sessionStorage.getItem("app"));
     } else {
       setApp(appId);
     }
@@ -36,16 +35,11 @@ const AppSecurity = () => {
   };
 
   return (
-    app && (
-      <Security
-        oktaAuth={oktaAuth(app)}
-        restoreOriginalUri={restoreOriginalUri}
-      >
-        <App>
-          <AppRouter />
-        </App>
-      </Security>
-    )
+    <Security oktaAuth={oktaAuth(app)} restoreOriginalUri={restoreOriginalUri}>
+      <App>
+        <AppRouter />
+      </App>
+    </Security>
   );
 };
 
